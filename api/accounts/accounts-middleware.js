@@ -46,7 +46,7 @@ exports.checkAccountNameUnique = (req, res, next) => {
     .then(accounts => {
       accounts.forEach(account => {
         if(account.name === givenName){
-          res.status(404).json({ message: "that name is taken" })
+          res.status(400).json({ message: "that name is taken" })
           return;
         }
       })
